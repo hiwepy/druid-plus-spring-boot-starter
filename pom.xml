@@ -42,7 +42,7 @@
 			<timezone>+8</timezone>
 		</developer>
 	</developers>
-	
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
