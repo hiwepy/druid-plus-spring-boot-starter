@@ -22,6 +22,6 @@ public @interface SwitchRepository {
 	/**
 	 * 数据源名称
 	 */
-	public String value() default DataSourceRoutingKeyHolder.MASTER_DATASOURCE;
+    String value() default DataSourceRoutingKeyHolder.MASTER_DATASOURCE;
 	
 }

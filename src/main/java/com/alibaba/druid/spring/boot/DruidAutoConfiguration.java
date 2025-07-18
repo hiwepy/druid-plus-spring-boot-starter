@@ -50,7 +50,7 @@ import com.alibaba.druid.wall.WallFilter;
 @ConditionalOnClass(com.alibaba.druid.pool.DruidDataSource.class)
 @AutoConfigureBefore(name = {
 	"org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration",
-	"com.baomidou.mybatisplus.spring.boot.starter.MybatisPlusAutoConfiguration"
+	"com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration"
 })
 @ConditionalOnProperty(prefix = DruidProperties.PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
 @EnableConfigurationProperties({DruidProperties.class, DruidStatProperties.class, DataSourceProperties.class})

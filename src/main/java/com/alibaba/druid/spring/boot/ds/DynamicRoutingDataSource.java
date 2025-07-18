@@ -24,7 +24,7 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 	/**
      * 用于在维护数据源时保证不会被其他线程修改
      */
-    private static Lock lock = new ReentrantLock();
+    private static final Lock lock = new ReentrantLock();
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
 	protected static Field targetDataSourcesField = ReflectionUtils.findField(DynamicRoutingDataSource.class,
 			"targetDataSources");
@@ -48,7 +48,7 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 		resolvedDataSourcesField.setAccessible(true);
 		Object resolvedDataSources = ReflectionUtils.getField(resolvedDataSourcesField, this);
 		resolvedDataSourcesField.setAccessible(false);
-		return (Map<Object, DataSource>) resolvedDataSources;
+        return (Map<Object, DataSource>) resolvedDataSources;
 	}
 	
 	public void setTargetDataSource(String name, DataSourceProperties basicProperties, DruidDataSourceProperties druidProperties) {

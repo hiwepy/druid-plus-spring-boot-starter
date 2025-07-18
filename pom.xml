@@ -381,7 +381,8 @@
 		<maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
 		<maven-war-plugin.version>3.4.0</maven-war-plugin.version>
 		<!-- Dependency versions -->
-		<druid.version>1.2.23</druid.version>
+		<commons-lang3.version>3.18.0</commons-lang3.version>
+		<druid.version>1.2.25</druid.version>
 		<spring-biz.version>3.3.x.20241020.RELEASE</spring-biz.version>
 	</properties>
 	
