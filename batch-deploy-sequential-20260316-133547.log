@@ -1,0 +1,193 @@
+[druid-plus-spring-boot-starter/2.3.x] 失败 - 分支切换失败
+[druid-plus-spring-boot-starter/2.7.x] 失败 - 分支切换失败
+[druid-plus-spring-boot-starter/3.0.x] 失败 - 分支切换失败
+[druid-plus-spring-boot-starter/3.1.x] 失败 - 分支切换失败
+[druid-plus-spring-boot-starter/3.2.x] 失败 - 分支切换失败
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36mio.github.hiwepy:druid-plus-spring-boot-starter[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding io.github.hiwepy:druid-plus-spring-boot-starter 4.0.x.20251227-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-starter-jdbc/4.0.1/spring-boot-starter-jdbc-4.0.1.pom
+Progress (1): 2.5 kB
+                    
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-starter-jdbc/4.0.1/spring-boot-starter-jdbc-4.0.1.pom (2.5 kB at 3.5 kB/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-jdbc/4.0.1/spring-boot-jdbc-4.0.1.pom
+Progress (1): 2.6 kB
+                    
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-jdbc/4.0.1/spring-boot-jdbc-4.0.1.pom (2.6 kB at 6.8 kB/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-sql/4.0.1/spring-boot-sql-4.0.1.pom
+Progress (1): 2.0 kB
+                    
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-sql/4.0.1/spring-boot-sql-4.0.1.pom (2.0 kB at 4.8 kB/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-transaction/4.0.1/spring-boot-transaction-4.0.1.pom
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-transaction/4.0.1/spring-boot-transaction-4.0.1.pom (0 B at 0 B/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-persistence/4.0.1/spring-boot-persistence-4.0.1.pom
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-persistence/4.0.1/spring-boot-persistence-4.0.1.pom (0 B at 0 B/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/alibaba/druid-spring-boot-starter/1.2.25/druid-spring-boot-starter-1.2.25.pom
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/alibaba/druid-spring-boot-starter/1.2.25/druid-spring-boot-starter-1.2.25.pom (0 B at 0 B/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/spring-aspects/7.0.2/spring-aspects-7.0.2.pom
+Progress (1): 2.0 kB
+                    
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/spring-aspects/7.0.2/spring-aspects-7.0.2.pom (2.0 kB at 4.2 kB/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/spring-biz/3.3.x.20241020.RELEASE/spring-biz-3.3.x.20241020.RELEASE.pom
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/spring-biz/3.3.x.20241020.RELEASE/spring-biz-3.3.x.20241020.RELEASE.pom (0 B at 0 B/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/hitool-core/3.0.x.20241003.RELEASE/hitool-core-3.0.x.20241003.RELEASE.pom
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/hitool-core/3.0.x.20241003.RELEASE/hitool-core-3.0.x.20241003.RELEASE.pom (0 B at 0 B/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/hitool/3.0.x.20241003.RELEASE/hitool-3.0.x.20241003.RELEASE.pom
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/hitool/3.0.x.20241003.RELEASE/hitool-3.0.x.20241003.RELEASE.pom (0 B at 0 B/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-starter-jdbc/4.0.1/spring-boot-starter-jdbc-4.0.1.jar
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-persistence/4.0.1/spring-boot-persistence-4.0.1.jar
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-transaction/4.0.1/spring-boot-transaction-4.0.1.jar
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-sql/4.0.1/spring-boot-sql-4.0.1.jar
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-jdbc/4.0.1/spring-boot-jdbc-4.0.1.jar
+Progress (1): 3.8 kB
+Progress (1): 4.8 kB
+                    
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-starter-jdbc/4.0.1/spring-boot-starter-jdbc-4.0.1.jar (4.8 kB at 13 kB/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/alibaba/druid-spring-boot-starter/1.2.25/druid-spring-boot-starter-1.2.25.jar
+Progress (1): 3.8 kB
+Progress (1): 7.9 kB
+Progress (1): 11 kB 
+Progress (1): 14 kB
+Progress (1): 17 kB
+Progress (1): 20 kB
+Progress (1): 22 kB
+Progress (1): 26 kB
+                   
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-persistence/4.0.1/spring-boot-persistence-4.0.1.jar (0 B at 0 B/s)
+Progress (1): 31 kB
+                   
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/spring-aspects/7.0.2/spring-aspects-7.0.2.jar
+Progress (1): 34 kB
+Progress (1): 36 kB
+                   
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-transaction/4.0.1/spring-boot-transaction-4.0.1.jar (0 B at 0 B/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/spring-biz/3.3.x.20241020.RELEASE/spring-biz-3.3.x.20241020.RELEASE.jar
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-sql/4.0.1/spring-boot-sql-4.0.1.jar (36 kB at 63 kB/s)
+Downloading from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/hitool-core/3.0.x.20241003.RELEASE/hitool-core-3.0.x.20241003.RELEASE.jar
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/alibaba/druid-spring-boot-starter/1.2.25/druid-spring-boot-starter-1.2.25.jar (0 B at 0 B/s)
+Progress (1): 4.1 kB
+Progress (1): 8.2 kB
+Progress (1): 12 kB 
+Progress (1): 16 kB
+Progress (1): 19 kB
+Progress (1): 24 kB
+Progress (1): 28 kB
+Progress (1): 32 kB
+Progress (1): 36 kB
+Progress (1): 38 kB
+Progress (1): 41 kB
+Progress (1): 45 kB
+Progress (1): 49 kB
+Progress (1): 52 kB
+Progress (1): 55 kB
+Progress (1): 57 kB
+Progress (1): 61 kB
+Progress (1): 65 kB
+Progress (1): 69 kB
+Progress (1): 73 kB
+Progress (1): 77 kB
+Progress (1): 81 kB
+Progress (1): 85 kB
+Progress (1): 89 kB
+Progress (1): 93 kB
+Progress (1): 97 kB
+Progress (2): 97 kB | 4.0 kB
+Progress (2): 97 kB | 8.1 kB
+Progress (2): 97 kB | 11 kB 
+Progress (2): 101 kB | 11 kB
+Progress (2): 101 kB | 15 kB
+Progress (2): 105 kB | 15 kB
+Progress (2): 109 kB | 15 kB
+Progress (2): 113 kB | 15 kB
+Progress (2): 113 kB | 19 kB
+Progress (2): 117 kB | 19 kB
+Progress (2): 121 kB | 19 kB
+Progress (2): 125 kB | 19 kB
+Progress (2): 129 kB | 19 kB
+Progress (2): 134 kB | 19 kB
+Progress (2): 138 kB | 19 kB
+Progress (2): 142 kB | 19 kB
+Progress (2): 146 kB | 19 kB
+Progress (2): 150 kB | 19 kB
+Progress (2): 154 kB | 19 kB
+Progress (2): 158 kB | 19 kB
+Progress (2): 162 kB | 19 kB
+Progress (2): 166 kB | 19 kB
+Progress (2): 170 kB | 19 kB
+Progress (2): 175 kB | 19 kB
+Progress (2): 179 kB | 19 kB
+Progress (2): 183 kB | 19 kB
+Progress (2): 187 kB | 19 kB
+Progress (2): 191 kB | 19 kB
+Progress (2): 195 kB | 19 kB
+Progress (2): 199 kB | 19 kB
+Progress (2): 201 kB | 19 kB
+Progress (2): 201 kB | 23 kB
+Progress (2): 201 kB | 27 kB
+Progress (2): 201 kB | 31 kB
+Progress (2): 201 kB | 35 kB
+Progress (2): 201 kB | 38 kB
+Progress (2): 201 kB | 42 kB
+Progress (2): 201 kB | 46 kB
+Progress (2): 201 kB | 50 kB
+Progress (2): 201 kB | 50 kB
+                            
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/boot/spring-boot-jdbc/4.0.1/spring-boot-jdbc-4.0.1.jar (201 kB at 225 kB/s)
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/org/springframework/spring-aspects/7.0.2/spring-aspects-7.0.2.jar (50 kB at 56 kB/s)
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/spring-biz/3.3.x.20241020.RELEASE/spring-biz-3.3.x.20241020.RELEASE.jar (0 B at 0 B/s)
+Downloaded from aiban-tianyin-core: https://aiban-maven.pkg.coding.net/repository/tianyin/core/com/github/hiwepy/hitool-core/3.0.x.20241003.RELEASE/hitool-core-3.0.x.20241003.RELEASE.jar (0 B at 0 B/s)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.4.0:clean[m [1m(default-clean)[m @ [36mdruid-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Deleting /Users/wandl/workspaces/workspace-ddd4j/workspace-ddd4j-boot-starters/druid-plus-spring-boot-starter/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.5.0:enforce[m [1m(default-cli)[m @ [36mdruid-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  5.999 s
+[[1;34mINFO[m] Finished at: 2026-03-16T13:58:00+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-enforcer-plugin:3.5.0:enforce[m [1m(default-cli)[m on project [36mdruid-plus-spring-boot-starter[m: [1;31m[m
+[[1;31mERROR[m] [1;31mRule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion failed with message:[m
+[[1;31mERROR[m] [1;31mYou are running an older version of Maven. This application requires at least Maven 3.9.9.[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[druid-plus-spring-boot-starter/3.3.x] 失败 - 查看日志
+[druid-plus-spring-boot-starter/3.4.x] 失败 - 分支切换失败
+[druid-plus-spring-boot-starter/3.5.x] 失败 - 分支切换失败
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36mio.github.hiwepy:druid-plus-spring-boot-starter[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding io.github.hiwepy:druid-plus-spring-boot-starter 4.0.x.20251227-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.4.0:clean[m [1m(default-clean)[m @ [36mdruid-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.5.0:enforce[m [1m(default-cli)[m @ [36mdruid-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  0.312 s
+[[1;34mINFO[m] Finished at: 2026-03-16T13:58:01+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-enforcer-plugin:3.5.0:enforce[m [1m(default-cli)[m on project [36mdruid-plus-spring-boot-starter[m: [1;31m[m
+[[1;31mERROR[m] [1;31mRule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion failed with message:[m
+[[1;31mERROR[m] [1;31mYou are running an older version of Maven. This application requires at least Maven 3.9.9.[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[druid-plus-spring-boot-starter/4.0.x] 失败 - 查看日志
+[druid-plus-spring-boot-starter/master] 失败 - 分支切换失败
