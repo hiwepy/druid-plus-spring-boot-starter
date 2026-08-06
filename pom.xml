@@ -422,6 +422,7 @@
         <maven-surefire-plugin.vertsion>2.21.0</maven-surefire-plugin.vertsion>
         <maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
         <spring-biz.version>1.0.6.RELEASE</spring-biz.version>  
+                <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
     </properties>
     
     <dependencies>
@@ -510,7 +511,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.10</version>
+            <version>${druid-spring-boot-starter.version}</version>
         </dependency>
         
         <!-- For Commons Lang3 -->
@@ -532,5 +533,16 @@
         </dependency>
 
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>
