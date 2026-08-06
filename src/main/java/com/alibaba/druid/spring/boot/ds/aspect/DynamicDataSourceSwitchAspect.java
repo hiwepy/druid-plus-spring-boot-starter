@@ -12,7 +12,7 @@ import com.alibaba.druid.spring.boot.ds.annotation.SwitchRepository;
 
 /**
  * 数据源自动切换切面
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
  */
 @Aspect
 @Component

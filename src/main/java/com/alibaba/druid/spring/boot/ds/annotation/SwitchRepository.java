@@ -11,7 +11,7 @@ import org.springframework.biz.jdbc.DataSourceRoutingKeyHolder;
 
 /**
  * 用于方法注释；是否切换数据源及切换的数据源名称
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

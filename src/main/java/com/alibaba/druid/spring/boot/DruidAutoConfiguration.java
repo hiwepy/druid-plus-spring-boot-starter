@@ -44,7 +44,7 @@ import com.alibaba.druid.wall.WallFilter;
 /**
  * DruidAutoConfiguration配置类，代替 DruidDataSourceAutoConfigure初始化Druid数据源，支持动态数据源
  * 记得在启动类添加@EnableAutoConfiguration(exclude={DruidDataSourceAutoConfigure.class})
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
  */
 @Configuration
 @ConditionalOnClass(com.alibaba.druid.pool.DruidDataSource.class)
