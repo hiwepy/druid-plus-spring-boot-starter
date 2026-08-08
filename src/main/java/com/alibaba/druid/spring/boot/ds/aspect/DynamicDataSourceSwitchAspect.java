@@ -12,7 +12,7 @@ import com.alibaba.druid.spring.boot.ds.annotation.SwitchRepository;
 
 /**
  * 数据源自动切换切面
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 @Aspect
 @Component
@@ -21,7 +21,7 @@ public class DynamicDataSourceSwitchAspect {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 	
 	//环绕通知   
-	@Around("@annotation(com.alibaba.druid.spring.boot.ds.annotation.SwitchRepository) and @annotation(repository)")
+	@Around("@annotation(com.alibaba.druid.spring.boot.ds.annotation.SwitchRepository) && @annotation(repository)")
 	public Object around(ProceedingJoinPoint joinPoint, SwitchRepository repository) throws Throwable {
 		String oldRepository = DataSourceRoutingKeyHolder.getDataSourceKey();
     	try {

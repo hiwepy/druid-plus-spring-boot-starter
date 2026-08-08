@@ -44,13 +44,13 @@ import com.alibaba.druid.wall.WallFilter;
 /**
  * DruidAutoConfiguration配置类，代替 DruidDataSourceAutoConfigure初始化Druid数据源，支持动态数据源
  * 记得在启动类添加@EnableAutoConfiguration(exclude={DruidDataSourceAutoConfigure.class})
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 @Configuration
 @ConditionalOnClass(com.alibaba.druid.pool.DruidDataSource.class)
 @AutoConfigureBefore(name = {
 	"org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration",
-	"com.baomidou.mybatisplus.spring.boot.starter.MybatisPlusAutoConfiguration"
+	"com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration"
 })
 @ConditionalOnProperty(prefix = DruidProperties.PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
 @EnableConfigurationProperties({DruidProperties.class, DruidStatProperties.class, DataSourceProperties.class})
@@ -127,7 +127,8 @@ public class DruidAutoConfiguration {
 			}
 			// 动态数据源支持
 			DynamicRoutingDataSource dataSource = new DynamicRoutingDataSource();
-			dataSource.setTargetDataSources(targetDataSources); // 该方法是AbstractRoutingDataSource的方法
+			// 该方法是AbstractRoutingDataSource的方法
+			dataSource.setTargetDataSources(targetDataSources);
 
 			// 默认的数据源
 			DruidDataSource masterDataSource = DruidDataSourceUtils.createDataSource(druidProperties.configureProperties(basicProperties)) ; 
