@@ -1,13 +1,14 @@
 package com.alibaba.druid.spring.boot.util;
 
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import javax.sql.DataSource;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.jdbc.autoconfigure.DataSourceProperties;
 import org.springframework.boot.context.properties.PropertyMapper;
 import org.springframework.boot.jdbc.DatabaseDriver;
 
@@ -68,7 +69,12 @@ public class DruidDataSourceUtils {
     	/**
 		 * 批量设置参数
 		 */
-		PropertyMapper map = PropertyMapper.get().alwaysApplyingWhenNonNull();
+		PropertyMapper map = PropertyMapper.get().alwaysApplying(new PropertyMapper.SourceOperator() {
+			@Override
+			public <T> PropertyMapper.Source<T> apply(PropertyMapper.Source<T> source) {
+				return source.when(Objects::nonNull);
+			}
+		});
 
 		// druid 连接池参数
 		//dataSource.configFromPropety(druidProperties.toProperties());

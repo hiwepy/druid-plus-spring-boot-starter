@@ -3,7 +3,7 @@ package com.alibaba.druid.spring.boot.ds;
 import java.util.List;
 import java.util.Properties;
 
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.jdbc.autoconfigure.DataSourceProperties;
 import org.springframework.util.StringUtils;
 
 import com.alibaba.druid.pool.DruidAbstractDataSource;

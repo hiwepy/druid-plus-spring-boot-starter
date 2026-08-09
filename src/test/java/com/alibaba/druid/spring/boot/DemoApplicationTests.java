@@ -1,32 +1,27 @@
 package com.alibaba.druid.spring.boot;
 
-import javax.sql.DataSource;
+import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
 
-import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
+/**
+ * Basic smoke tests for the druid-plus-spring-boot-starter module.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
+class DemoApplicationTests {
 
-@SpringBootTest
-public class DemoApplicationTests {
+    @Test
+    @DisplayName("DruidProperties can be instantiated")
+    void druidPropertiesCanBeInstantiated() {
+        DruidProperties properties = new DruidProperties();
+        assertThat(properties).isNotNull();
+    }
 
-	@Primary
-	@Bean
-	@ConfigurationProperties("spring.datasource.druid.one")
-	public DataSource dataSourceOne(){
-	    return DruidDataSourceBuilder.create().build();
-	}
-	@Bean
-	@ConfigurationProperties("spring.datasource.druid.two")
-	public DataSource dataSourceTwo(){
-	    return DruidDataSourceBuilder.create().build();
-	}
-	
-	@Test
-	public void contextLoads() {
-	}
-
+    @Test
+    @DisplayName("DruidProperties has correct prefix")
+    void druidPropertiesHasCorrectPrefix() {
+        assertThat(DruidProperties.PREFIX).isEqualTo("spring.datasource.druid");
+    }
 }
