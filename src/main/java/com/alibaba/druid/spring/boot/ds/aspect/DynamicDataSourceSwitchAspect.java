@@ -12,7 +12,7 @@ import com.alibaba.druid.spring.boot.ds.annotation.SwitchRepository;
 
 /**
  * 数据源自动切换切面
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @Aspect
 @Component
