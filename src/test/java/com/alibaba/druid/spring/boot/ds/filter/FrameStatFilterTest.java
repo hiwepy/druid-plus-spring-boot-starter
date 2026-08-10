@@ -10,7 +10,7 @@ import com.alibaba.druid.filter.stat.StatFilter;
 /**
  * Tests for {@link FrameStatFilter}.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 class FrameStatFilterTest {
 

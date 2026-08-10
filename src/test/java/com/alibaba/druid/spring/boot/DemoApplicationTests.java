@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Basic smoke tests for the druid-plus-spring-boot-starter module.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 class DemoApplicationTests {
 

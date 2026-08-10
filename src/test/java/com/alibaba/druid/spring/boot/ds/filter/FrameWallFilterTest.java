@@ -18,7 +18,7 @@ import com.alibaba.druid.wall.WallFilter;
 /**
  * Tests for {@link FrameWallFilter}.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 class FrameWallFilterTest {
 
