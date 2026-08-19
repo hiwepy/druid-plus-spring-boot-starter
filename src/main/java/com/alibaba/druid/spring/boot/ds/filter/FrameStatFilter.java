@@ -25,6 +25,7 @@ import com.alibaba.druid.stat.JdbcSqlStat;
  * https://segmentfault.com/a/1190000014590536?utm_source=tag-newest
  * @author BBF
  * @see com.alibaba.druid.filter.stat.StatFilter#createSqlStat(StatementProxy, String)
+ * @since 1.0.0
  */
 public class FrameStatFilter extends StatFilter {
 	

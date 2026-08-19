@@ -74,6 +74,11 @@ public class DruidDataSourceUtils {
 	 * DruidDataSource配置属性列表：
 	 * https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8
 	 */
+	/**
+	 * <p>configure properties.</p>
+	 * @param druidProperties the druid properties
+	 * @param dataSource the data source
+	 */
 	public static void configureProperties(DruidDataSourceProperties druidProperties, DruidDataSource dataSource) {
 		
 		// 配置这个属性的意义在于，如果存在多个数据源，监控的时候可以通过名字来区分开来。如果没有配置，将会生成一个名字，格式是：”DataSource-” +
@@ -86,6 +91,11 @@ public class DruidDataSourceUtils {
 		 * 批量设置参数
 		 */
 		PropertyMapper map = PropertyMapper.get().alwaysApplying(new PropertyMapper.SourceOperator() {
+			/**
+			 * <p>apply.</p>
+			 * @param source the source
+			 * @return the apply return value
+			 */
 			@Override
 			public <T> PropertyMapper.Source<T> apply(PropertyMapper.Source<T> source) {
 				return source.when(Objects::nonNull);
@@ -208,6 +218,18 @@ public class DruidDataSourceUtils {
 		
 	}
 	
+	/**
+	 * <p>configure filters.</p>
+	 * @param dataSource the data source
+	 * @param statFilters the stat filters
+	 * @param configFilters the config filters
+	 * @param encodingConvertFilters the encoding convert filters
+	 * @param slf4jLogFilters the slf4j log filters
+	 * @param log4jFilters the log4j filters
+	 * @param log4j2Filters the log4j2filters
+	 * @param commonsLogFilters the commons log filters
+	 * @param wallFilters the wall filters
+	 */
 	public static void configureFilters(DruidDataSource dataSource, ObjectProvider<StatFilter> statFilters,
 			ObjectProvider<ConfigFilter> configFilters, ObjectProvider<EncodingConvertFilter> encodingConvertFilters,
 			ObjectProvider<Slf4jLogFilter> slf4jLogFilters, ObjectProvider<Log4jFilter> log4jFilters,
