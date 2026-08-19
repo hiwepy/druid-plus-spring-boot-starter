@@ -58,6 +58,11 @@ import com.alibaba.druid.wall.WallFilter;
     DruidStatViewServletConfiguration.class,
     DruidWebStatFilterConfiguration.class,
     DruidFilterConfiguration.class})
+/**
+ * <p>Auto-configuration for DruidAutoConfiguration.</p>
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class DruidAutoConfiguration {
 
     private static final String FILTER_STAT_PREFIX = "spring.datasource.druid.filter.stat";
@@ -73,6 +78,10 @@ public class DruidAutoConfiguration {
     @ConfigurationProperties(FILTER_WALL_PREFIX)
     @ConditionalOnProperty(prefix = FILTER_WALL_PREFIX, name = "enabled")
 	@Primary
+    /**
+     * <p>Wall filter.</p>
+     * @return the result
+     */
     public WallFilter wallFilter(@Qualifier("wallConfig") WallConfig wallConfig) {
         WallFilter filter = new FrameWallFilter();
         filter.setConfig(wallConfig);
@@ -88,6 +97,10 @@ public class DruidAutoConfiguration {
 	@ConfigurationProperties(FILTER_STAT_PREFIX)
     @ConditionalOnProperty(prefix = FILTER_STAT_PREFIX, name = "enabled", matchIfMissing = true)
 	@Primary
+	/**
+	 * <p>Stat filter.</p>
+	 * @return the result
+	 */
 	public StatFilter statFilter() {
 		return new FrameStatFilter();
 	}

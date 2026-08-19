@@ -29,6 +29,12 @@ import com.alibaba.druid.stat.JdbcSqlStat;
 public class FrameStatFilter extends StatFilter {
 	
 	@Override
+	/**
+	 * <p>Create sql stat.</p>
+	 * @param statement
+	 * @param sql
+	 * @return the result
+	 */
 	public JdbcSqlStat createSqlStat(StatementProxy statement, String sql) {
 		return super.createSqlStat(statement, sql);
 	}

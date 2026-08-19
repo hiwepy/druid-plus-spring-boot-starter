@@ -124,6 +124,13 @@ public class FrameWallFilter extends WallFilter {
 	}
 
 	@Override
+	/**
+	 * <p>Connection_prepare statement.</p>
+	 * @param chain
+	 * @param connection
+	 * @param sql
+	 * @return the result
+	 */
 	public PreparedStatementProxy connection_prepareStatement(FilterChain chain, ConnectionProxy connection, String sql)
 			throws SQLException {
 		this.setProvider(connection);
@@ -167,6 +174,13 @@ public class FrameWallFilter extends WallFilter {
 	}
 
 	@Override
+	/**
+	 * <p>Connection_prepare call.</p>
+	 * @param chain
+	 * @param connection
+	 * @param sql
+	 * @return the result
+	 */
 	public CallableStatementProxy connection_prepareCall(FilterChain chain, ConnectionProxy connection, String sql)
 			throws SQLException {
 		this.setProvider(connection);

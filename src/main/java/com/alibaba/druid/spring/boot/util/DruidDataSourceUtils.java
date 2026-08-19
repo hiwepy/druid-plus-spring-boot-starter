@@ -24,8 +24,18 @@ import com.alibaba.druid.spring.boot.ds.DruidDataSourceProperties;
 import com.alibaba.druid.util.JdbcUtils;
 import com.alibaba.druid.wall.WallFilter;
 
+/**
+ * <p>Auto-configuration for DruidDataSourceUtils.</p>
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class DruidDataSourceUtils {
 
+	/**
+	 * <p>Create data source.</p>
+	 * @param druidProperties
+	 * @return the result
+	 */
 	public static <T extends DataSource> DruidDataSource createDataSource( DruidDataSourceProperties druidProperties ) {
 		
 		DataSourceProperties tmProperties = new DataSourceProperties();
@@ -50,6 +60,12 @@ public class DruidDataSourceUtils {
 	}
 
 	@SuppressWarnings("unchecked")
+	/**
+	 * <p>Create data source.</p>
+	 * @param properties
+	 * @param type
+	 * @return the result
+	 */
 	public static <T> T createDataSource(DataSourceProperties properties, Class<? extends DataSource> type) {
 		return (T) properties.initializeDataSourceBuilder().type(type).build();
 	}

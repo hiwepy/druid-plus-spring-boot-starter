@@ -12,6 +12,11 @@ import com.alibaba.druid.spring.boot.ds.DruidDataSourceProperties;
 @Getter
 @Setter
 @ConfigurationProperties(DruidProperties.PREFIX)
+/**
+ * <p>Auto-configuration for DruidProperties.</p>
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class DruidProperties extends DruidDataSourceProperties {
 
 	public static final String PREFIX = "spring.datasource.druid";
