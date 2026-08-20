@@ -31,9 +31,9 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
      */
     private static final Lock lock = new ReentrantLock();
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
-	protected static Field targetDataSourcesField = ReflectionUtils.findField(DynamicRoutingDataSource.class,
+	protected static Field targetDataSourcesField = ReflectionUtils.findField(AbstractRoutingDataSource.class,
 			"targetDataSources");
-	protected static Field resolvedDataSourcesField = ReflectionUtils.findField(DynamicRoutingDataSource.class,
+	protected static Field resolvedDataSourcesField = ReflectionUtils.findField(AbstractRoutingDataSource.class,
 			"resolvedDataSources");
 	
 	@Override

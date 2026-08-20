@@ -44,6 +44,7 @@ import com.alibaba.druid.wall.WallFilter;
 /**
  * DruidAutoConfiguration配置类，代替 DruidDataSourceAutoConfigure初始化Druid数据源，支持动态数据源
  * 记得在启动类添加@EnableAutoConfiguration(exclude={DruidDataSourceAutoConfigure.class})
+ * <p>Auto-configuration for DruidAutoConfiguration.</p>
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @Configuration
@@ -58,11 +59,6 @@ import com.alibaba.druid.wall.WallFilter;
     DruidStatViewServletConfiguration.class,
     DruidWebStatFilterConfiguration.class,
     DruidFilterConfiguration.class})
-/**
- * <p>Auto-configuration for DruidAutoConfiguration.</p>
- * @author <a href="https://github.com/loong10k">Loong Wan</a>
- * @since 1.0.0
- */
 public class DruidAutoConfiguration {
 
     private static final String FILTER_STAT_PREFIX = "spring.datasource.druid.filter.stat";

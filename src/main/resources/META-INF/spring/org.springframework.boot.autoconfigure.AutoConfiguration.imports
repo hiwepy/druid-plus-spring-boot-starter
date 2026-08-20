@@ -1,1 +1,2 @@
 com.alibaba.druid.spring.boot.DruidAutoConfiguration
+com.alibaba.druid.spring.boot.metrics.DruidMetricsAutoConfiguration

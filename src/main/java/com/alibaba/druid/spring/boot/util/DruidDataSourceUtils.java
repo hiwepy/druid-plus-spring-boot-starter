@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import javax.sql.DataSource;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.jdbc.autoconfigure.DataSourceProperties;
@@ -29,6 +30,7 @@ import com.alibaba.druid.wall.WallFilter;
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
+@Slf4j
 public class DruidDataSourceUtils {
 
 	/**
@@ -130,10 +132,12 @@ public class DruidDataSourceUtils {
 		// 指定过滤器
 		map.from(druidProperties.getFilters()).to(filters -> {
 			try {
-				dataSource.setFilters(filters);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			dataSource.setFilters(filters);
+		} catch (SQLException e) {
+			log.error("Failed to apply filters [{}] to DruidDataSource [{}]", filters, dataSource.getName(), e);
+			throw new IllegalStateException(
+					String.format("Failed to apply filters [%s] to DruidDataSource [%s]", filters, dataSource.getName()), e);
+		}
 		});
 		map.from(druidProperties.isInitExceptionThrow()).to(dataSource::setInitExceptionThrow);
 		map.from(druidProperties.isInitGlobalVariants()).to(dataSource::setInitGlobalVariants);
