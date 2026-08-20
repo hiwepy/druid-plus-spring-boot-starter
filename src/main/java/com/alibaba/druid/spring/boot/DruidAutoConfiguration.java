@@ -44,6 +44,7 @@ import com.alibaba.druid.wall.WallFilter;
 /**
  * DruidAutoConfiguration配置类，代替 DruidDataSourceAutoConfigure初始化Druid数据源，支持动态数据源
  * 记得在启动类添加@EnableAutoConfiguration(exclude={DruidDataSourceAutoConfigure.class})
+ * <p>Auto-configuration for DruidAutoConfiguration.</p>
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @Configuration
@@ -73,6 +74,10 @@ public class DruidAutoConfiguration {
     @ConfigurationProperties(FILTER_WALL_PREFIX)
     @ConditionalOnProperty(prefix = FILTER_WALL_PREFIX, name = "enabled")
 	@Primary
+    /**
+     * <p>Wall filter.</p>
+     * @return the result
+     */
     public WallFilter wallFilter(@Qualifier("wallConfig") WallConfig wallConfig) {
         WallFilter filter = new FrameWallFilter();
         filter.setConfig(wallConfig);
@@ -88,6 +93,10 @@ public class DruidAutoConfiguration {
 	@ConfigurationProperties(FILTER_STAT_PREFIX)
     @ConditionalOnProperty(prefix = FILTER_STAT_PREFIX, name = "enabled", matchIfMissing = true)
 	@Primary
+	/**
+	 * <p>Stat filter.</p>
+	 * @return the result
+	 */
 	public StatFilter statFilter() {
 		return new FrameStatFilter();
 	}
@@ -95,6 +104,20 @@ public class DruidAutoConfiguration {
 	/*
 	 * @Primary 该注解表示在同一个接口有多个实现类可以注入的时候，默认选择哪一个，而不是让@autowire注解报错
 	 * @Qualifier 根据名称进行注入，通常是在具有相同的多个类型的实例的一个注入（例如有多个DataSource类型的实例）
+	 */
+	/**
+	 * <p>data source.</p>
+	 * @param basicProperties the basic properties
+	 * @param druidProperties the druid properties
+	 * @param statFilters the stat filters
+	 * @param configFilters the config filters
+	 * @param encodingConvertFilters the encoding convert filters
+	 * @param slf4jLogFilters the slf4j log filters
+	 * @param log4jFilters the log4j filters
+	 * @param log4j2Filters the log4j2filters
+	 * @param commonsLogFilters the commons log filters
+	 * @param wallFilters the wall filters
+	 * @return the dataSource return value
 	 */
 	@Bean
 	@Primary
