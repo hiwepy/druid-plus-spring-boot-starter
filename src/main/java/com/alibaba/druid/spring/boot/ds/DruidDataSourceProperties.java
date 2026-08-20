@@ -3,7 +3,7 @@ package com.alibaba.druid.spring.boot.ds;
 import java.util.List;
 import java.util.Properties;
 
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.jdbc.autoconfigure.DataSourceProperties;
 import org.springframework.util.StringUtils;
 
 import com.alibaba.druid.pool.DruidAbstractDataSource;
@@ -13,6 +13,11 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
+/**
+ * <p>Auto-configuration for DruidDataSourceProperties.</p>
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class DruidDataSourceProperties {
 
 	/** 基本属性 url、user、password */
@@ -156,10 +161,15 @@ public class DruidDataSourceProperties {
 	private String validationQuery = "SELECT 1";
 	private Integer validationQueryTimeout = -1;
 
+	/** @return return the db type. */
 	public String getDbType() {
 		return StringUtils.hasText(dbType) ? dbType : JdbcUtils.getDbType(this.getUrl(), null);
 	}
 
+	/**
+	 * <p>To properties.</p>
+	 * @return the result
+	 */
 	public Properties toProperties() {
 
 		Properties properties = new Properties();
@@ -174,6 +184,12 @@ public class DruidDataSourceProperties {
 		return properties;
 	}
 
+	/**
+	 * <p>Not null add.</p>
+	 * @param properties
+	 * @param key
+	 * @param value
+	 */
 	protected void notNullAdd(Properties properties, String key, Object value) {
 		if (value != null) {
 			properties.setProperty("druid." + key, value.toString());
@@ -181,6 +197,11 @@ public class DruidDataSourceProperties {
 	}
 	
 	
+	/**
+	 * <p>Configure properties.</p>
+	 * @param basicProperties
+	 * @return the result
+	 */
 	public DruidDataSourceProperties configureProperties(DataSourceProperties basicProperties) {
 		 //if not found prefix 'spring.datasource.druid' jdbc properties ,'spring.datasource' prefix jdbc properties will be used.
 		if (this.getName() == null) {
