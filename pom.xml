@@ -7,13 +7,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.0-M4</version>
+        <version>4.1.0</version>
         <relativePath/>
     </parent>
 
     <groupId>io.github.easy4j</groupId>
     <artifactId>druid-plus-spring-boot-starter</artifactId>
-    <version>4.1.x.20260630-SNAPSHOT</version>
+    <version>4.1.x.20260820-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Spring Boot Starter For Druid</description>
@@ -51,8 +51,8 @@
 
     <properties>
         <java.version>21</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <maven.version>4.0.0-rc-5</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -62,7 +62,6 @@
         <druid.version>1.2.28</druid.version>
         <micrometer.version>1.15.5</micrometer.version>
         <slf4j.version>2.0.18</slf4j.version>
-        <spring-biz.version>3.0.x.20260630-SNAPSHOT</spring-biz.version>
         <!-- Maven Plugin Dependencies -->
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
         <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
@@ -105,12 +104,7 @@
                 <artifactId>micrometer-registry-prometheus</artifactId>
                 <version>${micrometer.version}</version>
             </dependency>
-            <dependency>
-                <groupId>io.github.easy4j</groupId>
-                <artifactId>spring-enhance</artifactId>
-                <version>${spring-biz.version}</version>
-            </dependency>
-            <dependency>
+                        <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j.version}</version>
@@ -231,10 +225,6 @@
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-core</artifactId>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>io.github.easy4j</groupId>
-            <artifactId>spring-enhance</artifactId>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
