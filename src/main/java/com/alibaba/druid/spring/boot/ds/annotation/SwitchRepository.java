@@ -17,6 +17,11 @@ import org.springframework.biz.jdbc.DataSourceRoutingKeyHolder;
 @Target(ElementType.METHOD)
 @Documented
 @Inherited
+/**
+ * <p>Auto-configuration for SwitchRepository.</p>
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public @interface SwitchRepository {
 
 	/**
