@@ -19,24 +19,34 @@ import com.alibaba.druid.spring.boot.util.DruidDataSourceUtils;
 
 
 @SuppressWarnings("unchecked")
+/**
+ * <p>Auto-configuration for DynamicRoutingDataSource.</p>
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 
 	/**
      * 用于在维护数据源时保证不会被其他线程修改
      */
-    private static Lock lock = new ReentrantLock();
+    private static final Lock lock = new ReentrantLock();
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
-	protected static Field targetDataSourcesField = ReflectionUtils.findField(DynamicRoutingDataSource.class,
+	protected static Field targetDataSourcesField = ReflectionUtils.findField(AbstractRoutingDataSource.class,
 			"targetDataSources");
-	protected static Field resolvedDataSourcesField = ReflectionUtils.findField(DynamicRoutingDataSource.class,
+	protected static Field resolvedDataSourcesField = ReflectionUtils.findField(AbstractRoutingDataSource.class,
 			"resolvedDataSources");
 	
 	@Override
+	/**
+	 * <p>Determine current lookup key.</p>
+	 * @return the result
+	 */
 	protected Object determineCurrentLookupKey() {
 		 logger.info("Current DataSource is [{}]", DataSourceRoutingKeyHolder.getDataSourceKey());
 		return DataSourceRoutingKeyHolder.getDataSourceKey();
 	}
 	
+	/** @return return the target data sources. */
 	public Map<Object, Object> getTargetDataSources() {
 		targetDataSourcesField.setAccessible(true);
 		Object targetDataSources = ReflectionUtils.getField(targetDataSourcesField, this);
@@ -44,13 +54,15 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 		return (Map<Object, Object>) targetDataSources;
 	}
 
+	/** @return return the resolved data sources. */
 	public Map<Object, DataSource> getResolvedDataSources() {
 		resolvedDataSourcesField.setAccessible(true);
 		Object resolvedDataSources = ReflectionUtils.getField(resolvedDataSourcesField, this);
 		resolvedDataSourcesField.setAccessible(false);
-		return (Map<Object, DataSource>) resolvedDataSources;
+        return (Map<Object, DataSource>) resolvedDataSources;
 	}
 	
+	/** @param druidProperties set the target data source. */
 	public void setTargetDataSource(String name, DataSourceProperties basicProperties, DruidDataSourceProperties druidProperties) {
 
 		lock.lock();
@@ -85,10 +97,12 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 		
 	}
 	
+	/** @param druidProperties set the target data source. */
 	public void setTargetDataSource(DataSourceProperties properties, DruidDataSourceProperties druidProperties) {
 		this.setTargetDataSource(druidProperties.getName(), properties, druidProperties);
 	}
 
+	/** @param targetDataSources set the new target data sources. */
 	public void setNewTargetDataSources(Map<Object, Object> targetDataSources) {
 		
 		lock.lock();
@@ -104,6 +118,10 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 	    }
 	}
 
+	/**
+	 * <p>Remove target data source.</p>
+	 * @param name
+	 */
 	public void removeTargetDataSource(String name) {
 		
 		lock.lock();
@@ -120,6 +138,9 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 	}
 	
 	@Override
+	/**
+	 * <p>After properties set.</p>
+	 */
 	public void afterPropertiesSet() {
 		super.afterPropertiesSet();
 		getTargetDataSources().forEach((key, value) -> {
