@@ -16,12 +16,23 @@ import com.alibaba.druid.spring.boot.ds.annotation.SwitchRepository;
  */
 @Aspect
 @Component
+/**
+ * <p>Auto-configuration for DynamicDataSourceSwitchAspect.</p>
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class DynamicDataSourceSwitchAspect {
 	
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 	
 	//环绕通知   
 	@Around("@annotation(com.alibaba.druid.spring.boot.ds.annotation.SwitchRepository) && @annotation(repository)")
+	/**
+	 * <p>Around.</p>
+	 * @param joinPoint
+	 * @param repository
+	 * @return the result
+	 */
 	public Object around(ProceedingJoinPoint joinPoint, SwitchRepository repository) throws Throwable {
 		String oldRepository = DataSourceRoutingKeyHolder.getDataSourceKey();
     	try {

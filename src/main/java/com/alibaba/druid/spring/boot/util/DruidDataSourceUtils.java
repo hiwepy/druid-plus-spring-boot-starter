@@ -1,10 +1,12 @@
 package com.alibaba.druid.spring.boot.util;
 
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import javax.sql.DataSource;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -23,8 +25,19 @@ import com.alibaba.druid.spring.boot.ds.DruidDataSourceProperties;
 import com.alibaba.druid.util.JdbcUtils;
 import com.alibaba.druid.wall.WallFilter;
 
+/**
+ * <p>Auto-configuration for DruidDataSourceUtils.</p>
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
+@Slf4j
 public class DruidDataSourceUtils {
 
+	/**
+	 * <p>Create data source.</p>
+	 * @param druidProperties
+	 * @return the result
+	 */
 	public static <T extends DataSource> DruidDataSource createDataSource( DruidDataSourceProperties druidProperties ) {
 		
 		DataSourceProperties tmProperties = new DataSourceProperties();
@@ -49,6 +62,12 @@ public class DruidDataSourceUtils {
 	}
 
 	@SuppressWarnings("unchecked")
+	/**
+	 * <p>Create data source.</p>
+	 * @param properties
+	 * @param type
+	 * @return the result
+	 */
 	public static <T> T createDataSource(DataSourceProperties properties, Class<? extends DataSource> type) {
 		return (T) properties.initializeDataSourceBuilder().type(type).build();
 	}
@@ -56,6 +75,11 @@ public class DruidDataSourceUtils {
 	/*
 	 * DruidDataSource配置属性列表：
 	 * https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8
+	 */
+	/**
+	 * <p>configure properties.</p>
+	 * @param druidProperties the druid properties
+	 * @param dataSource the data source
 	 */
 	public static void configureProperties(DruidDataSourceProperties druidProperties, DruidDataSource dataSource) {
 		
@@ -68,7 +92,17 @@ public class DruidDataSourceUtils {
     	/**
 		 * 批量设置参数
 		 */
-		PropertyMapper map = PropertyMapper.get().alwaysApplyingWhenNonNull();
+		PropertyMapper map = PropertyMapper.get().alwaysApplying(new PropertyMapper.SourceOperator() {
+			/**
+			 * <p>apply.</p>
+			 * @param source the source
+			 * @return the apply return value
+			 */
+			@Override
+			public <T> PropertyMapper.Source<T> apply(PropertyMapper.Source<T> source) {
+				return source.when(Objects::nonNull);
+			}
+		});
 
 		// druid 连接池参数
 		//dataSource.configFromPropety(druidProperties.toProperties());
@@ -98,10 +132,12 @@ public class DruidDataSourceUtils {
 		// 指定过滤器
 		map.from(druidProperties.getFilters()).to(filters -> {
 			try {
-				dataSource.setFilters(filters);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			dataSource.setFilters(filters);
+		} catch (SQLException e) {
+			log.error("Failed to apply filters [{}] to DruidDataSource [{}]", filters, dataSource.getName(), e);
+			throw new IllegalStateException(
+					String.format("Failed to apply filters [%s] to DruidDataSource [%s]", filters, dataSource.getName()), e);
+		}
 		});
 		map.from(druidProperties.isInitExceptionThrow()).to(dataSource::setInitExceptionThrow);
 		map.from(druidProperties.isInitGlobalVariants()).to(dataSource::setInitGlobalVariants);
@@ -186,6 +222,18 @@ public class DruidDataSourceUtils {
 		
 	}
 	
+	/**
+	 * <p>configure filters.</p>
+	 * @param dataSource the data source
+	 * @param statFilters the stat filters
+	 * @param configFilters the config filters
+	 * @param encodingConvertFilters the encoding convert filters
+	 * @param slf4jLogFilters the slf4j log filters
+	 * @param log4jFilters the log4j filters
+	 * @param log4j2Filters the log4j2filters
+	 * @param commonsLogFilters the commons log filters
+	 * @param wallFilters the wall filters
+	 */
 	public static void configureFilters(DruidDataSource dataSource, ObjectProvider<StatFilter> statFilters,
 			ObjectProvider<ConfigFilter> configFilters, ObjectProvider<EncodingConvertFilter> encodingConvertFilters,
 			ObjectProvider<Slf4jLogFilter> slf4jLogFilters, ObjectProvider<Log4jFilter> log4jFilters,
