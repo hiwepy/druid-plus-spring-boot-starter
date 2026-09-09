@@ -24,6 +24,7 @@ import io.micrometer.core.instrument.binder.MeterBinder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.function.ToDoubleFunction;
 import java.util.function.ToLongFunction;
@@ -221,6 +222,9 @@ public class DruidMetrics implements MeterBinder {
 			bindDataSourceMetrics(meterRegistry, dataSource, tags);
 
 			JdbcDataSourceStat dsStats = dataSource.getDataSourceStat();
+			if (Objects.isNull(dsStats)) {
+				return;
+			}
 
 			bindDataSourceMetrics(meterRegistry, dsStats, tags);
 

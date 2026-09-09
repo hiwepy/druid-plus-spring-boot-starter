@@ -103,6 +103,17 @@ class DruidMetricsTest {
 	}
 
 	@Test
+	void shouldBindPoolMetricsBeforeDataSourceInitialization() {
+		DruidDataSource dataSource = new DruidDataSource();
+		dataSource.setMaxActive(12);
+		DruidMetrics metrics = new DruidMetrics(Collections.singletonMap("uninitialized", dataSource));
+
+		metrics.bindTo(registry);
+
+		assertGaugeValue("druid.max.active", 12.0, registry);
+	}
+
+	@Test
 	void shouldPublishPoolConfigurationGauges() {
 		DruidDataSource dataSource = injectStat(new DruidDataSource());
 		dataSource.setMaxActive(20);
