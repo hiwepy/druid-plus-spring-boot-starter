@@ -27,7 +27,6 @@ import com.alibaba.druid.filter.logging.Log4jFilter;
 import com.alibaba.druid.filter.logging.Slf4jLogFilter;
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties;
 import com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration;
 import com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration;
@@ -163,7 +162,12 @@ public class DruidAutoConfiguration {
 			
 		}
 		
-		return DruidDataSourceBuilder.create().build();
+		DruidDataSource dataSource = DruidDataSourceUtils.createDataSource(
+				druidProperties.configureProperties(basicProperties));
+		DruidDataSourceUtils.configureFilters(dataSource, statFilters, configFilters,
+				encodingConvertFilters, slf4jLogFilters, log4jFilters, log4j2Filters,
+				commonsLogFilters, wallFilters);
+		return dataSource;
 	}
 
 }
