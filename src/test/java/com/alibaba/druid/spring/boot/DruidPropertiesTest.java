@@ -73,7 +73,7 @@ class DruidPropertiesTest {
         slave1.setName("slave1");
         DruidDataSourceProperties slave2 = new DruidDataSourceProperties();
         slave2.setName("slave2");
-        List<DruidDataSourceProperties> slaves = List.of(slave1, slave2);
+        List<DruidDataSourceProperties> slaves = java.util.Arrays.asList(slave1, slave2);
         properties.setSlaves(slaves);
         assertThat(properties.getSlaves()).hasSize(2);
         assertThat(properties.getSlaves().get(0).getName()).isEqualTo("slave1");

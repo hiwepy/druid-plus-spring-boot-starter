@@ -229,7 +229,7 @@ class DruidDataSourcePropertiesTest {
     @Test
     @DisplayName("Getter and setter for connectionInitSqls")
     void connectionInitSqlsGetterSetter() {
-        List<String> sqls = List.of("SET NAMES utf8mb4", "SET time_zone='+08:00'");
+        List<String> sqls = java.util.Arrays.asList("SET NAMES utf8mb4", "SET time_zone='+08:00'");
         properties.setConnectionInitSqls(sqls);
         assertThat(properties.getConnectionInitSqls()).hasSize(2);
     }
